@@ -47,7 +47,8 @@ This module is about array dsa questions
 
 }
 
---------  Finding a minimum and maximum value in the array   --------
+// Finding a minimum and maximum value in the array  
+
     public static int findPeakElement(int arr[]){
         int start = 0;
         int end = arr. length -1;
@@ -87,3 +88,4 @@ This module is about array dsa questions
 
     }
 }
+
