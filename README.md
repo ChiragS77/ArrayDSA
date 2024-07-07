@@ -46,3 +46,44 @@ This module is about array dsa questions
 }
 
 }
+
+--------  Finding a minimum and maximum value in the array   --------
+    public static int findPeakElement(int arr[]){
+        int start = 0;
+        int end = arr. length -1;
+
+        while(start<end){
+            int mid = start + (start -end)/2;
+
+            if(arr[mid]< arr[mid+1]){
+                start= mid +1;
+            }
+            else{
+                end = mid;
+            }
+        }
+        return end;
+    }
+
+    public static boolean isPeak(int arr[], int index){
+        int length = arr.length;
+
+        if(index <0 || index > length){
+            return false;
+        }
+
+        if(index ==0 || arr[index] >= arr[index-1] && index==length-1 || arr[index] >= arr[index + 1]){
+            return true;
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 3, 20, 4, 1, 0};
+        int peakIdx = findPeakElement(arr);
+
+      boolean result =   isPeak(arr,peakIdx);
+      System.out.println(result);
+
+    }
+}
