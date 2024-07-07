@@ -41,6 +41,8 @@ This module is about array dsa questions
 
       boolean result =   isPeak(arr,peakIdx);
       System.out.println(result);
-}
-    }
 
+    }
+}
+
+}
