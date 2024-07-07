@@ -49,43 +49,43 @@ This module is about array dsa questions
 
 // Finding a minimum and maximum value in the array  
 
-    public static int findPeakElement(int arr[]){
-        int start = 0;
-        int end = arr. length -1;
+       public static int getMin(int arr[]){
 
-        while(start<end){
-            int mid = start + (start -end)/2;
-
-            if(arr[mid]< arr[mid+1]){
-                start= mid +1;
-            }
-            else{
-                end = mid;
-            }
-        }
-        return end;
+        return Arrays.stream(arr).min().getAsInt();
     }
 
-    public static boolean isPeak(int arr[], int index){
-        int length = arr.length;
+    public static int getMax(int arr[]){
 
-        if(index <0 || index > length){
-            return false;
-        }
-
-        if(index ==0 || arr[index] >= arr[index-1] && index==length-1 || arr[index] >= arr[index + 1]){
-            return true;
-        }
-        return false;
+        return Arrays.stream(arr).max().getAsInt();
     }
+
+     public static int getMin(int arr[]){
+        int n = arr.length;
+        int min = arr[0];
+
+        for(int i=0; i<n; i++){
+            min = Math.min(min,arr[i]);
+        }
+        return min;
+    }
+
+    public static int getMax(int arr[]){
+        int n = arr.length;
+        int max = arr[0];
+        for (int i=0; i<n; i++){
+            max = Math.max(max , arr[i]);
+        }
+        return max;
+    }
+
+
 
     public static void main(String[] args) {
         int[] arr = {1, 3, 20, 4, 1, 0};
-        int peakIdx = findPeakElement(arr);
-
-      boolean result =   isPeak(arr,peakIdx);
-      System.out.println(result);
+       int mx = getMax(arr);
+       int mi = getMin(arr);
+       System.out.print("minimum value is "+mi+" maximum value is "+mx);
 
     }
-}
+
 
